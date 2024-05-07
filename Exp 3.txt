@@ -1,0 +1,118 @@
+Exp 3
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame; 
+import javax.swing.JLabel; 
+import javax.swing.JTextField;
+
+public class Exp02 implements ActionListener { JTextField jtf1,jtf2,jtf3,jtf4,jtf5,jtf6,jtf7; Exp02(){
+JFrame f = new JFrame("Students Results"); f.setLayout(null);
+f.setSize(500,500); f.setVisible(true);
+
+JLabel l1 = new JLabel("Exam Marks Entry"); l1.setBounds(175,20,150,30);
+f.add(l1);
+
+
+JLabel l2 = new JLabel("Name:"); l2.setBounds(125,60,150,20); f.add(l2);
+
+jtf1 = new JTextField(); jtf1.setBounds(175,60,150,20); f.add(jtf1);
+
+JLabel l3 = new JLabel("Roll No:"); l3.setBounds(125,90,150,20); f.add(l3);
+ 
+jtf2 = new JTextField(); jtf2.setBounds(175,90,150,20); f.add(jtf2);
+
+JLabel l4 = new JLabel("Subjects"); l4.setBounds(150,120,150,20); f.add(l4);
+
+JLabel l5 = new JLabel("Marks"); l5.setBounds(275,120,150,20); f.add(l5);
+
+JLabel l6 = new JLabel("English"); l6.setBounds(150,150,150,20); f.add(l6);
+
+jtf3 = new JTextField(); jtf3.setBounds(225,150,150,20); f.add(jtf3);
+
+JLabel l7 = new JLabel("Maths"); l7.setBounds(150,180,150,20); f.add(l7);
+
+jtf4 = new JTextField(); jtf4.setBounds(225,180,150,20); f.add(jtf4);
+
+JLabel l8 = new JLabel("Science"); l8.setBounds(150,210,150,20); f.add(l8); 
+jtf5 = new JTextField(); jtf5.setBounds(225,210,150,20); f.add(jtf5);
+
+JLabel l9 = new JLabel("Hindi"); l9.setBounds(150,240,150,20); f.add(l9);
+
+jtf6 = new JTextField(); jtf6.setBounds(225,240,150,20); f.add(jtf6);
+
+JLabel l10 = new JLabel("Marathi"); l10.setBounds(150,270,150,20); f.add(l10);
+
+jtf7 = new JTextField(); jtf7.setBounds(225,270,150,20); f.add(jtf7);
+
+JButton jb = new JButton("Submit"); jb.setBounds(175,310,150,20); jb.addActionListener(this);//imp to register listener f.add(jb);
+}
+public static void main(String[] args) { Exp02 obj = new Exp02();
+}
+@Override
+public void actionPerformed(ActionEvent e) { JFrame f1 = new JFrame("Students Results"); 
+f1.setLayout(null); f1.setSize(500,500); f1.setVisible(true);
+
+JLabel l1 = new JLabel("Examination Results"); l1.setBounds(175,20,150,30);
+f1.add(l1);
+
+
+JLabel l2 = new JLabel("Name:"); l2.setBounds(125,60,150,20); f1.add(l2);
+
+String na = jtf1.getText(); JLabel l11 = new JLabel(na); l11.setBounds(175,60,150,20); f1.add(l11);
+
+JLabel l3 = new JLabel("Roll No:"); l3.setBounds(125,90,150,20); f1.add(l3);
+
+String ro = jtf2.getText(); JLabel l12 = new JLabel(ro); l12.setBounds(175,90,150,20); f1.add(l12);
+
+JLabel l4 = new JLabel("Subjects"); l4.setBounds(150,120,150,20); f1.add(l4);
+
+JLabel l5 = new JLabel("Marks"); l5.setBounds(275,120,150,20); 
+f1.add(l5);
+
+
+JLabel l6 = new JLabel("English"); l6.setBounds(150,150,150,20); f1.add(l6);
+
+String se = jtf3.getText(); JLabel l13 = new JLabel(se); l13.setBounds(280,150,150,20); f1.add(l13);
+
+JLabel l7 = new JLabel("Maths"); l7.setBounds(150,180,150,20); f1.add(l7);
+
+String sm = jtf4.getText(); JLabel l14 = new JLabel(sm); l14.setBounds(280,180,150,20); f1.add(l14);
+
+JLabel l8 = new JLabel("Science"); l8.setBounds(150,210,150,20); f1.add(l8);
+
+String ss = jtf5.getText(); JLabel l15 = new JLabel(ss); l15.setBounds(280,210,150,20); f1.add(l15);
+
+JLabel l9 = new JLabel("Hindi"); l9.setBounds(150,240,150,20); f1.add(l9); 
+String sh = jtf6.getText(); JLabel l16 = new JLabel(sh); l16.setBounds(280,240,150,20); f1.add(l16);
+
+JLabel l10 = new JLabel("Marathi"); l10.setBounds(150,270,150,20); f1.add(l10);
+
+String smar = jtf7.getText(); JLabel l17 = new JLabel(smar); l17.setBounds(280,270,150,20); f1.add(l17);
+
+int s1 = Integer.parseInt(se); int s2 = Integer.parseInt(sm); int s3 = Integer.parseInt(ss); int s4 = Integer.parseInt(sh); int s5 = Integer.parseInt(smar);
+
+int sum = s1+s2+s3+s4+s5;
+double percentage = (sum*100)/500;
+
+
+JLabel l18 = new JLabel("Percentage = " + percentage); l18.setBounds(180, 300, 150, 20);
+f1.add(l18);
+
+
+String str;
+if(percentage > 35 && percentage >75) { str = "Fail";
+} 
+else if(percentage > 35 && percentage > 95 ){ str = "Outstanding";
+}
+else if(percentage > 35) { str = "Pass";
+}
+else {
+str = "Fail";
+}
+
+
+JLabel l19 = new JLabel("Status = " + str); l19.setBounds(180, 330, 150, 20); f1.add(l19);
+}
+}
